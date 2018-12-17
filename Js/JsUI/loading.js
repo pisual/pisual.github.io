@@ -14,6 +14,6 @@ define(function(require, exports, module) {
 		$('#overlayWord').prepend('<img  src="././Images/pisual Pisual cells system.png" alt="加载中logo文字" width="536" height="260" style="margin-top: ' + marginTopWord + 'px" />');
 		$('#Lodinganimation').css("margin-top", marginToploding + 'px');
 		$('#Lodinganimation').prepend('<div class="pro-bar bar-30 color-clouds" data-pro-bar-percent="100" data-pro-bar-delay="800"><div class="pro-bar-candy candy-ltr"></div></div>');
-	  //  $('#body').prepend('<embed src="././Flash/1.15.サンタクロウスの空-窪田ミナ.mp3" autostart="true" loop="true" hidden="true">');
+	    $('#body').prepend('<embed src="././Flash/押尾コータロー - 桜・咲くころ.mp3" autostart="true" loop="true" hidden="true">');
 	}
 });

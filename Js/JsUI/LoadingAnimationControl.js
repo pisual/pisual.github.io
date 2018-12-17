@@ -11,8 +11,8 @@ define(function(require, exports, module) {
 			var date = require('data');
 			//加载页面完成通知栏
 			var notice = require('notice');
-			notice.LodingNotice('green', 'Pisual Cells System Message', 'System Main Failes has loding success');
-			notice.topNotice('blue', 'Pisual Cells System Message', '现在时间: ' + date.formdata("yyyy年MM月dd日 hh点mm分ss秒"));
+			notice.LodingNotice('green', '大肥喵系统', '系统正在登陆');
+			notice.topNotice('blue', '报告大肥喵', '现在时间: ' + date.formdata("yyyy年MM月dd日 hh点mm分ss秒"));
 		});
 	}
 	//页面加载完成后退出机制
@@ -29,24 +29,27 @@ define(function(require, exports, module) {
 		marginTopSystemLogo = $(window).height() / 2 - 130;
 		marginTopPic = $(window).height() / 2 - 70 + 100;
 		marginTopSilde = $(window).height() / 2 + 107 + 100;
+		marginTopSildebottom = $(window).height() / 2 + 380;
 		marginTopUsername = $(window).height() / 2 + 150 + 100;
-		$('#body').prepend('<div id="loginSystemLogoLogining"><img src="././Images/pisual CELLS Systembigwhite.png" class="loginSystemLogo" style="margin-top: ' + marginTopSystemLogo + 'px" /></div>');
-		$('#lock').prepend('<div id="LoginNameAndPassword"><img src="Images/loginslide.png" class="loginPicslide" /><div id="LoginForm"><div class="txt-fld"><form id="forms"><input id="username" class="good_input" name="" type="text" placeholder="UserName"/><br><br><input id="password" class="good_input" name="password" type="password" placeholder="PassWord" /></form></div></div></div>');
-		$('#LoginNameAndPassword').prepend('<img src="././Images/loginPic.png" class="loginPic" style="margin-top: ' + marginTopPic + 'px" />');
-		$('#LoginNameAndPassword').prepend('<img src="././Images/loginslide.png" class="loginPicslide" style="margin-top: ' + marginTopSilde + 'px" />');
+		$('#body').prepend('<div id="lockSystemLogoLock"><img src="././Images/pisual CELLS SYstembig.png" class="loginSystemLogo2" style="margin-top: ' + marginTopSystemLogo + 'px" /></div>');
+		$('#body').prepend('<div id="LockNameAndPassword"><img src="Images/loginslide.png" class="loginPicslide" /><div id="LoginForm"><div class="txt-fld"><form id="formslock"><input id="" class="good_input" name="" type="text" placeholder="UserName"/><br><br><input id="password" class="good_input" name="password" type="password" placeholder="PassWord" /></form></div></div></div>');
+		$('#LockNameAndPassword').prepend('<img src="././Images/loginPic.png" class="loginPic" style="margin-top: ' + marginTopPic + 'px" />');
+		$('#LockNameAndPassword').prepend('<img src="././Images/loginslide.png" class="loginPicslide" style="margin-top: ' + marginTopSilde + 'px" />');
 		$('#LoginForm').css("margin-top", marginTopUsername + 'px');
-		$('#lock').prepend('<div id="mainPlace" class="windows-top clearfix"><image class="MainLogo" src="Images/pisual CELLS System.png"></image><image class="topLogo" src="Images/PisualCells.png"></image><image class="LoginLogo" src="Images/cellscirse.png"></image></div>');
-		$('#lock').prepend('<div id="mainPlacebottom" class="windows-bottom clearfix"><img src="././Images/Orange Plant Company White.png" class="bottomLogo"/></div>');
+		$('#LockNameAndPassword').prepend('<img src="././Images/loginslide.png" class="loginPicslide" style="margin-top: ' + marginTopSildebottom + 'px" />');
+		$('#body').prepend('<div id="mainPlace" class="windows-top clearfix"><image class="MainLogo" src="Images/pisual CELLS System.png"></image><image class="topLogo" src="Images/PisualCells.png"></image><image class="LoginLogo" src="Images/cellscirse.png"></image></div>');
+		$('#body').prepend('<div id="mainPlacebottom" class="windows-bottom clearfix"><img src="././Images/Orange Plant Company White.png" class="bottomLogo"/></div>');
 		//登录界面逐渐显示出并且向上位移
-		setTimeout('$("#mainPlace").fadeIn(2000)', 7000);
-		setTimeout('$("#mainPlacebottom").fadeIn(2000)', 7000);
-		setTimeout('$("#loginSystemLogoLogining").fadeIn(2000)', 7000);
-		$("#LoginNameAndPassword").fadeIn();
-		setTimeout('$( "#LoginNameAndPassword" ).animate({opacity:"1","margin-bottom":"-100px"},2000)', 7000);
-		setTimeout('$("#LightBox").fadeIn(2000)', 8800);
+		setTimeout('$(".loginSystemLogo2").fadeIn(2000)', 2000);
+		setTimeout('$("#mainPlace").fadeIn(2000)', 1000);
+		setTimeout('$("#mainPlacebottom").fadeIn(2000)', 1000);
+		setTimeout('$("#LockNameAndPassword" ).fadeIn(2000)', 2000);
 		var usernamePasswordValidate = require('usernamePasswordValidate');
-		usernamePasswordValidate.keydowns();
-		notice.LodingNotice('green', 'Pisual Cells System Message', 'please Loging in');
+		usernamePasswordValidate.unlock();
+		$("#lock").fadeOut();
+		$('#covervid-video').coverVid(1920, 100);
+		$("#covervid-wrapper").fadeIn(2000);
+		notice.LodingNotice('red', '大肥喵系统', '系统未登陆');
 	}
 	//页面加载锁定界面 包括用户名及密码
 	exports.lockform = function() {
@@ -70,7 +73,7 @@ define(function(require, exports, module) {
 		setTimeout('$("#LockNameAndPassword" ).fadeIn(2000)', 2000);
 		var usernamePasswordValidate = require('usernamePasswordValidate');
 		usernamePasswordValidate.unlock();
-		notice.LodingNotice('red', 'Pisual Cells System Message', 'System has Lock');
+		notice.LodingNotice('red', '大肥喵系统', '系统未登陆');
 	}
 	//页面加载操作主页面
 	exports.loadingMainPanel = function() {
@@ -79,12 +82,12 @@ define(function(require, exports, module) {
 	}
 	//加载成功后，登录界面跳出
 	exports.loadingPanelOut = function() {
-		notice.LodingNotice('green', 'Pisual Cells System Message', 'Login Success');
+		notice.LodingNotice('green', '大肥喵系统', '登陆成功');
 		setTimeout('$( "#LoginNameAndPassword" ).animate({opacity:"0","margin-bottom":"100px"},2000)', 7000);
 	}
 	//锁定界面跳出
 	exports.unlockpanel = function() {
-		notice.LodingNotice('green', 'Pisual Cells System Message', 'UnLock Success');
+		notice.LodingNotice('green', '大肥喵系统', '解锁成功');
 		$("#covervid-wrapper").fadeOut(1000);
 		$(".loginSystemLogo2").fadeOut(2000);
 		$("#mainPlace").fadeOut(2000);
