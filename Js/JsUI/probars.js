@@ -15,7 +15,7 @@ define(function(require, exports, module) {
 				lodingover = new Object(); //创建一个定时循环返回变量
 				var clocktimeloding;
 				lodingover.interval = function() {
-					if ($elem.css('width') == '500px') {
+					if ($elem.css('width') == '200px') {
 						clearInterval(clocktimeloding);
 						//首页加载退出机制
 						var LoadingAnimationControl = require('LoadingAnimationControl');

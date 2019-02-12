@@ -10,7 +10,7 @@ define(function(require, exports, module) {
 				y: 'bottom'
 			},
 			theme: 'NoticeBorder',
-			color: 'black',
+			color: 'white',
 			audio: '././audio/blop',
 			volume: 50,
 			animation: {
@@ -36,7 +36,7 @@ define(function(require, exports, module) {
 				y: 'top'
 			},
 			theme: 'NoticeBorder',
-			color: 'black',
+			color: 'white',
 			audio: '././Audio/blop',
 			volume: 50,
 			animation: {

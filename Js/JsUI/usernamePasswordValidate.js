@@ -4,22 +4,34 @@
 	exports.keydowns = function() {
 		$('#forms').keydown(function(e) {
 			if (e.keyCode == 13) {
-				notice.LodingNotice('yellow', 'Pisual Cells System Message', 'Connecting Pisual Services...');
-				notice.LodingNotice('green', 'Pisual Cells System Message', 'Login Success');
-				$("#LightBox").fadeOut(800);
-				setTimeout('$( "#LoginNameAndPassword" ).fadeOut(1000)', 700);
-				setTimeout('$( "#loginSystemLogoLogining" ).fadeOut(1000)', 700);
-				var mainPanelAnimation = require('mainPanelAnimation');
-				mainPanelAnimation.loadSwichBooks();
-				var swordMenu = require('swordMenu');
-				swordMenu.run();
-				var video = require('video');
-				video.run();
-				var clock = require('clock');
-				clock.run();
-				setTimeout('$(".sb-container").fadeIn(1500)', 2000);
-				setTimeout('$("#loginSystemLogoLogining").remove()', 7000);
-				setTimeout('$("#LoginNameAndPassword").remove()', 7000);
+				var username = $("#username").val();
+
+				var password = $("#password").val();
+				if(username == "喵小姐" && password=="5277"){
+					notice.LodingNotice('yellow', '恭喜喵小姐', '打开了略记本');
+					$("#LightBox").fadeOut(800);
+					setTimeout('$( "#LoginNameAndPassword" ).fadeOut(1000)', 700);
+					setTimeout('$( "#loginSystemLogoLogining" ).fadeOut(1000)', 700);
+					var mainPanelAnimation = require('mainPanelAnimation');
+					mainPanelAnimation.loadSwichBooks();
+					var swordMenu = require('swordMenu');
+					swordMenu.run();
+					var video = require('video');;
+					video.run();
+					var clock = require('clock');
+					clock.run();
+					setTimeout('$(".sb-container").fadeIn(1500)', 2000);
+					setTimeout('$("#loginSystemLogoLogining").remove()', 7000);
+					setTimeout('$("#LoginNameAndPassword").remove()', 7000);
+				}
+				else{
+					$('#error').remove();
+					marginTopPic = $(window).height()/3;
+					$('#LightBox').append('<div id ="error"><img src="././Images/error.jpg"  class ="error"  style="margin-top: ' + marginTopPic + 'px" /></div>');
+					setTimeout('$("#error").fadeOut(1500)', 2000);
+					//$('#error').remove();
+				}
+
 			}
 		});
 	}
