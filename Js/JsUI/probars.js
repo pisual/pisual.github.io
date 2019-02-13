@@ -1,4 +1,5 @@
 define(function(require, exports, module) {
+	var notice = require('notice');
 	exports.run = function() {
 		$('.pro-bar').each(function(i, elem) {
 			var $elem = $(this),
@@ -25,6 +26,19 @@ define(function(require, exports, module) {
 				}
 				clocktimeloding = setInterval(lodingover.interval, 3000);
 			});
+		});
+
+		$("#lockPress").click(function() {
+				if ($('#lock').css('display') == 'none') {
+					//notice.LodingNotice('red', 'Pisual Cells System Message', 'System Has Locked');
+				} else {
+					notice.LodingNotice('red', '喵小姐日记', '日记已经锁定');
+					$("#lock").fadeOut();
+					//$('#covervid-video').coverVid(1920, 100);
+					//$("#covervid-wrapper").fadeIn(2000);
+					var LoadingAnimationControl = require('LoadingAnimationControl');
+					LoadingAnimationControl.lockform();
+				}
 		});
 	}
 });

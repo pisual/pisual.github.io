@@ -70,7 +70,7 @@ body {
 	background: #ddd url(../Images/egg_shell.jpg)repeat top left;
 	overflow: scroll;
 	overflow-x: hidden;
-	/*zoom:0.5;*/
+	zoom:0.8;
 	/**zoom:0.5;*/
 }
 
@@ -99,8 +99,7 @@ body {
 .error {
 	position: absolute;
 	Height: 640px;
-	left: 80px;
-	top: 19px;
+	left: 15%;
 }
 
 .LoginLogo {
@@ -255,8 +254,8 @@ body {
 	background: #f0f3a6;
 	opacity: 0.9;
 	z-index: 999997;
-	height: 1024px;
-	width: 768px;
+	height: 100%;
+	width: 100%;
 	display: none;
 	top: 0px;
 	left: 0px;

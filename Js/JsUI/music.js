@@ -9,7 +9,7 @@ $("#openmusic").click(function(){
       '<section class="grid-wrap">' +
       '<ul class="grid">' +
       '<li class="grid-sizer"></li>' +
-
+ 
 
       '<li>' +
       '<figure>' +

@@ -26,7 +26,7 @@
 				}
 				else{
 					$('#error').remove();
-					marginTopPic = $(window).height()/3;
+					marginTopPic = $(window).height()/2-300;
 					$('#LightBox').append('<div id ="error"><img src="././Images/error.jpg"  class ="error"  style="margin-top: ' + marginTopPic + 'px" /></div>');
 					setTimeout('$("#error").fadeOut(1500)', 2000);
 					//$('#error').remove();
@@ -35,23 +35,37 @@
 			}
 		});
 	}
-	//锁定界面回车解锁
+//锁定界面回车解锁
 	exports.unlock = function() {
 		$('#formslock').keydown(function(e) {
 			if (e.keyCode == 13) {
-				notice.LodingNotice('green', 'Pisual Cells System Message', 'UnLock Success');
-				$("#covervid-wrapper").fadeOut(1000);
-				$(".loginSystemLogo2").fadeOut(2000);
-				$("#mainPlace").fadeOut(2000);
-				$("#mainPlacebottom").fadeOut(2000);
-				$("#LockNameAndPassword").fadeOut(2000);
-				notice.LodingNotice('green', 'Pisual Cells System Message', 'Load lock before operation interface');
-				setTimeout('$("#lockSystemLogoLock").remove()', 2000);
-				setTimeout('$("#LockNameAndPassword").remove()', 2000);
-				setTimeout('$("#mainPlace").remove()', 2000);
-				setTimeout('$("#mainPlacebottom").remove()', 2000);
-				setTimeout('$("#lock").fadeIn(3000)', 2010);
+				var username = $("#usernames").val();
+
+				var password = $("#passwords").val();
+				if (username == "喵小姐" && password == "5277") {
+					notice.LodingNotice('yellow', '恭喜喵小姐', '打开了略记本');
+					$("#covervid-wrapper").fadeOut(1000);
+					$(".loginSystemLogo2").fadeOut(2000);
+					$("#mainPlace").fadeOut(2000);
+					$("#mainPlacebottom").fadeOut(2000);
+					$("#LockNameAndPassword").fadeOut(2000);
+					notice.LodingNotice('green', 'Pisual Cells System Message', 'Load lock before operation interface');
+					setTimeout('$("#lockSystemLogoLock").remove()', 2000);
+					setTimeout('$("#LockNameAndPassword").remove()', 2000);
+					setTimeout('$("#mainPlace").remove()', 2000);
+					setTimeout('$("#mainPlacebottom").remove()', 2000);
+					setTimeout('$("#lock").fadeIn(3000)', 2010);
+				}
+				else {
+					$('#errors').remove();
+					marginTopPic = $(window).height() / 2 - 300;
+					$('#body').append('<div id ="errors"><img src="././Images/error.jpg"  class ="error"  style="margin-top: ' + marginTopPic + 'px" /></div>');
+					setTimeout('$("#errors").fadeOut(1500)', 2000);
+					//$('#error').remove();
+				}
 			}
 		})
 	}
+
+
 });
