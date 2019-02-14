@@ -552,7 +552,7 @@ p.error span {
 	height: 100%;
 	top: 0;
 	left: 0;
-	background: rgba(131,112,98,0.8);
+	background: rgba(131,112,98);
 	-webkit-transition: opacity 0.3s;
 	transition: opacity 0.3s;
 }
